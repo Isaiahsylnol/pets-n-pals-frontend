@@ -27,7 +27,7 @@ const Home = () => {
   }, [dispatch]);
 
   const fetchProducts = async () => {
-    const result = await axios(`${process.env.REACT_PUBLIC_BACKEND}/products`);
+    const result = await axios(`${process.env.NEXT_PUBLIC_BACKEND}/products`);
     setProducts(result.data.data);
   };
 
