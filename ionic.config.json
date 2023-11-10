@@ -1,0 +1,7 @@
+{
+  "name": "pets-n-pals-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

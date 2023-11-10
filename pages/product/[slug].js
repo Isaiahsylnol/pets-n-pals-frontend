@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 
 export async function getStaticProps(context) {
   const sku = context.params.slug;
-  const res = await fetch(`http://localhost:3000/api/product/${sku}`);
+  const res = await fetch(
+    `https://pets-n-pals-frontend-aqslwdlxb-isaiahsylnol.vercel.app/api/product/${sku}`
+  );
   const data = await res.json();
 
   return {
@@ -17,7 +19,9 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch(
+    "https://pets-n-pals-frontend-aqslwdlxb-isaiahsylnol.vercel.app/api/products"
+  );
   const data = await res.json();
   const paths = data.data.map((item) => {
     return {
