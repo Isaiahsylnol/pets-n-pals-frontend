@@ -25,7 +25,7 @@ function Header(props) {
   return (
     <div className="p-4 shadow bg-[#56788f] text-white top-0 z-20 sticky">
       <nav>
-        <a href="/" className="absolute">
+        <Link href="/" className="absolute">
           <Image
             src={require(`/assets/logo-badge.png`)}
             alt="Pets'N Pals Logo"
@@ -33,7 +33,7 @@ function Header(props) {
             height={34}
             className="object-contain"
           />
-        </a>
+        </Link>
         <section className="MOBILE-MENU flex lg:hidden justify-end">
           <div className={isNavOpen ? "w-full top-0 z-10" : "hidden"}>
             <ul className="flex flex-col text-2xl  mt-16 space-y-14 uppercase">
@@ -58,7 +58,7 @@ function Header(props) {
                   </Link>
                 </li>
                 <li className="pr-4 hover:text-slate-300">
-                  <a href="/cart">
+                  <Link href="/cart">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -78,7 +78,7 @@ function Header(props) {
                         {props.countCartItems}{" "}
                       </div>
                     ) : null}
-                  </a>
+                  </Link>
                 </li>
               </div>
             </ul>

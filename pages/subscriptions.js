@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Footer from "../components/Footer.js";
 import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
 import SubscribeContainer from "../components/Subscriptions/Container.js";
+import Link from "next/link.js";
 
 export default function Subscriptions() {
   const [cartItems, setCartItems] = useState([]);
@@ -93,14 +94,14 @@ export default function Subscriptions() {
             </SubscribeContainer>
           </div>
           {user ? null : (
-            <a href="/login-register">
+            <Link href="/login-register">
               <button
                 type="button"
                 className="text-white bg-orange-400 hover:bg-[#1F1F1F] font-medium rounded-full text-sm px-8 py-4 text-center mr-2 mb-2"
               >
                 Sign Up
               </button>
-            </a>
+            </Link>
           )}
           <div className="mt-8 text-center">
             <span>
