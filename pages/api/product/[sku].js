@@ -21,20 +21,20 @@ const fetchProducts = async () => {
     return [];
   }
 };
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const productsData = await fetchProducts();
-      setProducts(productsData);
-    } catch (error) {
-      console.error("Error setting products:", error);
-    }
-  };
-
-  fetchData();
-}, []);
 
 export default function handler(req, res) {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const productsData = await fetchProducts();
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error setting products:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   let product = products.find((o) => o.sku === req.query.sku);
   res.status(200).json({
     product,
